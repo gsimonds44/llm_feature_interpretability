@@ -28,7 +28,7 @@ https://huggingface.co/datasets/codeparrot/codeparrot-clean/tree/main
 
 3) Token count is hard-limited to 4000 tokens per code sample, to stay within the 6GB of VRAM, and may be adjusted as needed if more memory is avalible. Many code samples are less than 4000 tokens, so the average token count per code sample will be somewhere betweeen 3000 and 4000. The attached pre-trained autoencoders were exposed to about 20k code samples (~75 million tokens), providing a ratio of ~5 samples per parameter, which was found to be sufficent for basic feature extraction.
 
-<img src="Screenshot 2026-02-24 at 4.24.16 PM"/>
+<img src="Screenshot 2026-02-24 at 4.24.16 PM.png"/>
 *Figure 1 - LSAE Block Diagram*<br>
 
 ## Inference and Feature Extraction:
