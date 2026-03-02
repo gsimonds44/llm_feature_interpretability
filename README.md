@@ -28,7 +28,7 @@ https://huggingface.co/datasets/codeparrot/codeparrot-clean/tree/main
 
 3) Token count is hard-limited to 4000 tokens per code sample, to stay within the 6GB of VRAM, and may be adjusted as needed if more memory is avalible. Many code samples are less than 4000 tokens, so the average token count per code sample will be somewhere betweeen 3000 and 4000. The attached pre-trained autoencoders were exposed to about 20k code samples (~75 million tokens), providing a ratio of ~5 samples per parameter, which was found to be sufficent for basic feature extraction.
 
-<img src="Screenshot 2026-02-24 at 4.24.16 PM">
+<img src="Screenshot 2026-02-24 at 4.24.16 PM"/>
 *Figure 1 - LSAE Block Diagram*<br>
 
 ## Inference and Feature Extraction:
@@ -61,17 +61,17 @@ Below are representative examples of emergent feature behavior observed using th
 
 1) **Use of None** -This feature activates strongly on tokens corresponding to the Python keyword `None`. Activation is largely invariant to surrounding context and formatting, indicating that the feature has specialized on the semantic role of Python’s null value rather than its position in the syntax tree. Notably, the feature does not activate on similarly short literals (`0`, `False`, empty strings), suggesting that the LSAE has isolated `None` as a distinct semantic concept rather than a generic constant.
 
-<img src="layer2_feature74.png">
+<img src="layer2_feature74.png"/>
 *Figure 2 - Use of "None"*<br>
 
 2) **First Token of a Line Inside a Function or Class** -This feature activates strongly on the first non-whitespace token of indented lines within function or class bodies. It remains inactive on top-level code and on continuation lines (e.g., wrapped expressions or chained method calls). The behavior indicates that the feature is encoding structural position rather than token identity. The same token (`if`, `return`, variable names) produces different activations depending on whether it appears as the leading token of a block-scoped line. This suggests that positional and indentation-related information is preserved. 
 
-<img src="layer18_feature156.png">
+<img src="layer18_feature156.png"/>
 *Figure 3 - First Token of a Line Inside a Function or Class*<br>
 
 3) **Convolusions on Images, Kernals** -This feature activates strongly on code segments involving 2D convolutions, image kernels, and filter operations. Strong responses are observed for tokens associated with kernel definitions, convolution loops, sliding-window logic, and common variable names (`kernel`, `filter`, `stride`, `padding`, etc.). Activation spans multiple consecutive tokens and often peaks around loop headers or array-indexing expressions, indicating sensitivity to higher-level algorithmic structure rather than isolated keywords. The feature generalizes across different coding styles and libraries (NumPy-based implementations versus manual nested loops), suggesting abstraction beyond surface-level syntax.
 
-<img src="layer19_feature746.png">
+<img src="layer19_feature746.png"/>
 *Figure 4 - Convolusions on Images, Kernals*<br>
 
 
