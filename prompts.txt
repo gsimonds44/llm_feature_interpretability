@@ -1,0 +1,10 @@
+Write a Python script that uses nested for-loops to generate a checkerboard pattern stored in a 2D list and prints it. Send python code only.
+Write a Python script that iterates over a list of lists and computes row-wise and column-wise sums using nested loops. Send python code only.
+Write a Python script that simulates a simple grid-based heat diffusion for several steps using nested loops and basic arithmetic. Send python code only.
+Write a Python script that traverses a 2D array and replaces values based on multiple if/elif conditions. Send python code only.
+Write a Python script that builds a triangle of numbers (like Pascal’s triangle) using nested loops and list indexing. Send python code only.
+Write a Python script that scans a matrix for local maxima using nested loops and neighbor comparisons. Send python code only.
+Write a Python script that generates all coordinate pairs in an N×N grid and applies filtering rules using nested loops. Send python code only.
+Write a Python script that simulates seating in a classroom using a 2D grid and updates seat states with nested loops. Send python code only.
+Write a Python script that performs a simple convolution over a 2D array using nested loops and a fixed kernel. Send python code only.
+Write a Python script that iterates through a 3D list structure and computes aggregated statistics at each level using nested loops. Send python code only.

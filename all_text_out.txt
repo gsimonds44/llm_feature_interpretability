@@ -1,0 +1,287 @@
+
+===== PROMPT 0 =====
+Write a Python script that uses nested for-loops to generate a checkerboard pattern stored in a 2D list and prints it. Send python code only.
+
+
+
+
+def print_checkerboard(n):
+    board = [[' ' for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if (i+j) % 2 == 0:
+                board[i][j] = 'X'
+            else:
+                board[i][j] = 'O'
+    for row in board:
+        print(' '.join(row))
+
+print_checkerboard(8)
+
+# This script will print a 8x8 checkerboard. You can change the argument to any number to get a different size checkerboard.
+# The checkerboard is filled with 'X's on even rows and 'O's on odd rows.
+# The ' ' (space) character is used to represent an empty cell.
+# You can modify the
+
+
+===== PROMPT 1 =====
+Write a Python script that iterates over a list of lists and computes row-wise and column-wise sums using nested loops. Send python code only.
+
+
+
+
+Here is a Python script that does this:
+
+```python
+def row_wise_sum(lst):
+    row_wise_sums = []
+    for i in range(len(lst)):
+        row_sum = 0
+        for j in range(len(lst[i])):
+            row_sum += lst[i][j]
+        row_wise_sums.append(row_sum)
+    return row_wise_sums
+
+def column_wise_sum(lst):
+    column_wise_sums = []
+    for j in range(len(lst[0])):
+        column_sum = 0
+        for i in range(len(lst)):
+            column_sum += lst[i][j]
+        column_wise_sums.append(column_sum)
+    return column_wise
+
+
+===== PROMPT 2 =====
+Write a Python script that simulates a simple grid-based heat diffusion for several steps using nested loops and basic arithmetic. Send python code only.
+
+
+
+
+Here is a simple implementation of the heat diffusion equation:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set up the grid
+N = 100
+dx = 0.1
+x = np.linspace(0, 1, N)
+
+# Set up the initial condition
+T = np.zeros(N)
+
+# Set the initial temperature
+T[N//2] = 100
+
+# Set up the time step
+dt = 0.01
+
+# Set up the time
+t_end = 10
+
+# Perform the simulation
+for t in range(int(t_end/dt)):
+    for i in range(1, N-1):
+        T[i] = T[i] + dt * (
+            (T[i-1] - 2*T[i
+
+
+===== PROMPT 3 =====
+Write a Python script that traverses a 2D array and replaces values based on multiple if/elif conditions. Send python code only.
+
+
+
+
+Here is a simple example:
+
+```python
+def replace_values(array):
+    for i in range(len(array)):
+        for j in range(len(array[i])):
+            if array[i][j] == 'A':
+                array[i][j] = 'B'
+            elif array[i][j] == 'C':
+                array[i][j] = 'D'
+            elif array[i][j] == 'E':
+                array[i][j] = 'F'
+    return array
+
+# Test the function
+array = [['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']]
+print(replace_values(array))
+```
+
+This script will replace 'A' with 'B', 'C' with 'D', and 'E' with
+
+
+===== PROMPT 4 =====
+Write a Python script that builds a triangle of numbers (like Pascal’s triangle) using nested loops and list indexing. Send python code only.
+
+
+
+
+Here is a simple Python script that builds a Pascal's triangle:
+
+```python
+def pascal_triangle(n):
+    triangle = [[1]*(i+1) for i in range(n)]
+    for i in range(2, n):
+        for j in range(1, i):
+            triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j]
+    return triangle
+
+n = 5
+triangle = pascal_triangle(n)
+for i in range(n):
+    print('   '*(n-i), end='', sep='')
+    for j in range(i+1):
+        print('{0:6}'.format(triangle[i][j]), end='', sep='')
+    print()
+```
+
+This script first creates a 2D list with
+
+
+===== PROMPT 5 =====
+Write a Python script that scans a matrix for local maxima using nested loops and neighbor comparisons. Send python code only.
+
+
+
+
+Here is a simple Python script that scans a matrix for local maxima using nested loops and neighbor comparisons.
+
+```python
+def find_local_maxima(matrix):
+    maxima = []
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    for i in range(rows):
+        for j in range(cols):
+            if (i > 0 and j > 0 and i < rows - 1 and j < cols - 1):
+                if matrix[i][j] > matrix[i-1][j] and matrix[i][j] > matrix[i+1][j] and matrix[i][j] > matrix[i][j-1] and matrix[i][j] > matrix[i][j+1]:
+                    maxima.append((i, j))
+
+    return maxima
+
+#
+
+
+===== PROMPT 6 =====
+Write a Python script that generates all coordinate pairs in an N×N grid and applies filtering rules using nested loops. Send python code only.
+
+
+
+
+Here is a simple Python script that generates all coordinate pairs in an N×N grid:
+
+```python
+def generate_coordinates(n):
+    coordinates = []
+    for i in range(n):
+        for j in range(n):
+            coordinates.append((i, j))
+    return coordinates
+
+n = 5
+coordinates = generate_coordinates(n)
+print(coordinates)
+```
+
+This script generates all coordinate pairs in an N×N grid. The `generate_coordinates` function takes an integer `n` as input and returns a list of tuples, where each tuple represents a coordinate pair.
+
+The nested loops generate all possible coordinate pairs in the grid. The outer loop iterates over the rows, and the inner loop iterates over the columns. The `append` method is used to add each coordinate pair to the `coordinates` list.
+
+Finally,
+
+
+===== PROMPT 7 =====
+Write a Python script that simulates seating in a classroom using a 2D grid and updates seat states with nested loops. Send python code only.
+
+
+
+
+Here is a simple simulation:
+
+```python
+class Classroom:
+    def __init__(self, rows, cols):
+        self.rows = rows
+        self.cols = cols
+        self.seats = self.initialize_seats()
+
+    def initialize_seats(self):
+        return [[0 for _ in range(self.cols)] for _ in range(self.rows)]
+
+    def seat_student(self, row, col):
+        if self.seats[row][col] == 0:
+            self.seats[row][col] = 1
+            print(f"Student seated at row {row+1}, column {col+1}")
+        else:
+            print(f"Seat {row+1}, {col+1} is already occupied")
+
+    def vacate_seat(self
+
+
+===== PROMPT 8 =====
+Write a Python script that performs a simple convolution over a 2D array using nested loops and a fixed kernel. Send python code only.
+
+
+
+
+Here is a simple 2D convolution operation using nested loops:
+
+```python
+def convolution(image, kernel):
+    image_height, image_width = image.shape
+    kernel_height, kernel_width = kernel.shape
+
+    # Calculate the output dimensions
+    output_height = image_height - kernel_height + 1
+    output_width = image_width - kernel_width + 1
+
+    # Initialize the output image
+    output_image = [[0 for _ in range(output_width)] for _ in range(output_height)]
+
+    # Perform the convolution
+    for i in range(output_height):
+        for j in range(output_width):
+            output_image[i][j] = sum(sum(image[i:i+kernel_height, j:j+kernel_width] * kernel))
+
+    return output_
+
+
+===== PROMPT 9 =====
+Write a Python script that iterates through a 3D list structure and computes aggregated statistics at each level using nested loops. Send python code only.
+
+
+
+
+Here is a simple example:
+
+```python
+def aggregate_stats(data):
+    total_elements = 0
+    total_sum = 0
+    total_avg = 0
+    total_max = 0
+    total_min = 0
+
+    for layer in data:
+        for row in layer:
+            for element in row:
+                total_elements += 1
+                total_sum += element
+                total_avg += element / total_elements
+                if total_max is None or element > total_max:
+                    total_max = element
+                if total_min is None or element < total_min:
+                    total_min = element
+
+    return {
+        'total_elements': total_elements,
+        'total_sum': total_sum,
+        'total_avg': total_avg,
+        'total_max': total_max,
