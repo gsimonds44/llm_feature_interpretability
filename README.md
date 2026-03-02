@@ -66,7 +66,7 @@ Below are representative examples of emergent feature behavior observed using th
 
 2) **First Token of a Line Inside a Function or Class** -This feature activates strongly on the first non-whitespace token of indented lines within function or class bodies. It remains inactive on top-level code and on continuation lines (e.g., wrapped expressions or chained method calls). The behavior indicates that the feature is encoding structural position rather than token identity. The same token (`if`, `return`, variable names) produces different activations depending on whether it appears as the leading token of a block-scoped line. This suggests that positional and indentation-related information is preserved. 
 
-<img src="layer18_feature156.png"/>
+<img src="layer18_feature_156.png"/>
 *Figure 3 - First Token of a Line Inside a Function or Class*<br>
 
 3) **Convolusions on Images, Kernals** -This feature activates strongly on code segments involving 2D convolutions, image kernels, and filter operations. Strong responses are observed for tokens associated with kernel definitions, convolution loops, sliding-window logic, and common variable names (`kernel`, `filter`, `stride`, `padding`, etc.). Activation spans multiple consecutive tokens and often peaks around loop headers or array-indexing expressions, indicating sensitivity to higher-level algorithmic structure rather than isolated keywords. The feature generalizes across different coding styles and libraries (NumPy-based implementations versus manual nested loops), suggesting abstraction beyond surface-level syntax.
