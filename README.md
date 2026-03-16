@@ -2,7 +2,7 @@
 
 ## Purpose:
 
-This pipeline demonstrates targeted feature recogniton on a lightweight 1.3B-parameter deepsseek code-generation model. It trains 24 linear sparse autoencoders (one for each transformer block output) on roughly 75 million tokens to uncover a large set of latent "feature flags" that correspond to recognizable coding practices. LLM inference is later run on a number of prompts generating 200 tokens each. Feature activations of the 4096 flags, for each of the 24 layers, for all tokens are recorded, are downsampled and saved as bytes, totaling 20 million total saved activations per prompt. A custom GUI is then used to display the inference generated code and comments, from all prompts. It features a colormapped text and click-to-select token feature filters, along with a slider filter for activation-threshold, to identify select features of interest.<br><br>
+This pipeline demonstrates targeted feature recogniton on a lightweight 1.3B-parameter deepsseek code-generation model. It trains 24 linear sparse autoencoders (one for each transformer block output) on roughly 75 million tokens to uncover a large set of latent "feature flags" that correspond to recognizable coding practices. LLM inference is later run on a number of prompts generating 200 tokens each. Feature activations of the 4096 flags, for each of the 24 layers, for all tokens are recorded, downsampled and saved as bytes, totaling 20 million total saved activations per prompt. A custom GUI is then used to display the inference generated code and comments, from all prompts. It features a colormapped text and click-to-select token feature filters, along with a slider filter for activation-threshold, to identify select features of interest.<br><br>
 
 
 
